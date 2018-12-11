@@ -16,15 +16,29 @@ public interface Fly {
 
 interface FastFly extends Fly {
     //2. you can override the method
-    default void takeOff() {System.out.println("FastFly takeOff");}
+    //  default void takeOff() {System.out.println("FastFly takeOff");}
 }
 
 class Seaplane extends Vehicle implements FastFly {
+
     //3. If a method is there in the class hierarchy the ut takes precedence
 
 }
 
-class Vehicle {
+//4 When there are 2 same method in the inteface hierarchy then you need to implement the method in the class
+// and you can leverage on point 3 to enhance child class behaviour
+class Plane implements Fly, Sail {
+    @Override
+    public void cruise() {
+        Fly.super.cruise();
+    }
+}
+
+interface Sail {
+    default void cruise() { System.out.println("Sail cruise");}
+}
+
+class Vehicle implements Fly {
     //3. If a method is there in the class hierarchy the ut takes precedence
     public void land() {
         System.out.println("Vehicle land");
