@@ -1,5 +1,6 @@
 package com.github.samples.enum_samples;
 
+import java.util.List;
 import java.util.function.DoubleBinaryOperator;
 
 enum Operation {
