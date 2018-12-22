@@ -42,6 +42,8 @@ public class Sample {
             }
         });*/
 
+      // printSorted(people, (c1, c2) -> c1.getName().compareTo(c2.getName()));
+
         //======================Step 2=====================
 
        /* printSorted(people, comparing(new Function<Person, String>() {
@@ -58,6 +60,7 @@ public class Sample {
             return (Comparator<T> & Serializable)
                     (c1, c2) -> keyExtractor.apply(c1).compareTo(keyExtractor.apply(c2));
         }*/
+
 
         //======================Final Step 3=====================
         printSorted(people, comparing(Person::getName));
