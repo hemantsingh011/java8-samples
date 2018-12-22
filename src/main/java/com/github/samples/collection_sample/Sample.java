@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
 
@@ -28,6 +29,9 @@ public class Sample {
         people.stream()
                 .sorted(comparator)
                 .forEach(System.out::println);
+
+        System.out.println(people.stream()
+                .collect(Collectors.groupingBy(Person::getAge, Collectors.toList())));
     }
 
     public static void main(String[] args) {
@@ -63,6 +67,6 @@ public class Sample {
 
 
         //======================Final Step 3=====================
-        printSorted(people, comparing(Person::getName));
+        printSorted(people, comparing(Person::getName).thenComparing(Person::getAge).reversed());
     }
 }
