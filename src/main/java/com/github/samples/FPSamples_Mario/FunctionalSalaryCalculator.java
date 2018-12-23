@@ -42,10 +42,9 @@ public class FunctionalSalaryCalculator {
 
 class SampleMain {
     public static void main(String[] args) {
-        new FunctionalSalaryCalculator()
+        System.out.println(new FunctionalSalaryCalculator()
                 .with(SalaryRules::allowance)
                 .with(SalaryRules::tax)
-                .with(t -> t * 1.5)
-                .calculate(1000.0);
+                .calculate(1000.0));
     }
 }
