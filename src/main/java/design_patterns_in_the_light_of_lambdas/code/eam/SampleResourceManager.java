@@ -1,5 +1,6 @@
 package design_patterns_in_the_light_of_lambdas.code.eam;
 
+import java.util.Map;
 import java.util.function.Consumer;
 
 class Resource {
@@ -20,6 +21,7 @@ class Resource {
     Resource resource = new Resource();
     try {
       consume.accept(resource);
+
     } finally {
       resource.close();
     }

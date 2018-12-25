@@ -51,7 +51,7 @@ public class Sample {
         //======================Step 2=====================
 
        /* printSorted(people, comparing(new Function<Person, String>() {
-            @Override public String apply(Person person) {
+            @Override public String with(Person person) {
                 return person.getName();
             }
         }));*/
@@ -62,7 +62,7 @@ public class Sample {
         {
             Objects.requireNonNull(keyExtractor);
             return (Comparator<T> & Serializable)
-                    (c1, c2) -> keyExtractor.apply(c1).compareTo(keyExtractor.apply(c2));
+                    (c1, c2) -> keyExtractor.with(c1).compareTo(keyExtractor.with(c2));
         }*/
 
 
